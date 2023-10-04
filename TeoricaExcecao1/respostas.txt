@@ -1,0 +1,48 @@
+1. Lista cinco exemplos de exceções comuns :
+
+Falta de memória no disco, valor inválido enviado pelo usuário, erro no código de execução,
+erro de leitura ou gravação e tenta acessar ou manipular um arquivo que não existe no sistema 
+de arquivos.
+
+2. Por que as técnicas de tratamento de exceções não devem ser utilizadas 
+para controle convencional de programação?
+
+Pois as exceções devem ser reservadas para tratamento de erros reais e situações que não podem
+ser previstas ou evitadas. Isso ajudará a manter o código limpo e eficiente.
+
+3. Se nenhuma exceção for disparada em um bloco try, para onde segue o 
+controle quando o bloco try completa a execução?
+
+O código irá para o finally caso tenha algum, senão ele continuara dando seguimento ao codigo.
+
+4. O que acontece se ocorrer uma exceção e um tratador de exceções apropriado não puder
+ser localizado?
+
+A  exceção sera passada para a JVM, que vai tentar tratar a exceção e vai encerrar o programa
+e imprimir uma mensagem de erro.
+
+5. .O que acontece se vários tratadores correspondem ao tipo de objeto 
+disparado?
+
+O Java seguirá uma ordem para determinar qual bloco será executado:
+    1 - Tratadores do tipo exato da exceção
+    2 - Tratadores proximos da exceção
+    3 - Tratadores ligados a interface implementada pela exceção
+    4 - Tratador com o tipo java.lang.Throwable
+
+6. Qual é a razão fundamental para utilizar blocos finally?
+
+São usados para garantir a execução de código crítico, independentemente de exceções ocorrerem ou
+não em um bloco try-catch. Ele garante a integridade dos dados e evita o vazamentos de recursos,
+oferecendo confiabilidade ao código.
+
+7. O que acontece quando um tratador catch dispara uma Exception?
+
+A exceção original é substituída pela exceção lançada no catch, se nenhum tratador adequado
+for encontrado a exceção será lançada para ser tratada em um bloco catch superior ou sera 
+encerrada.
+
+8. O que acontece com uma referência local em um bloco try quando esse 
+bloco dispara uma Exception?
+
+O código dentro do bloco try após a exceção não será executado.
